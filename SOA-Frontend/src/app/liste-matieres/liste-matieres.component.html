@@ -1,0 +1,75 @@
+<div class="container py-4">
+  <!-- Add/Edit Matiere Card -->
+  <div class="card shadow-sm rounded-lg mb-4">
+      <div class="card-header bg-gradient custom-card-header">
+          <h3 class="mb-0 text-white">
+              <i class="fas fa-edit me-2"></i>
+              {{ajout ? "Ajouter une matière" : "Modifier une matière"}}
+          </h3>
+      </div>
+      <div class="card-body p-4">
+          <app-update-matiere 
+              [matiere]="updatedMatiere" 
+              [ajout]="ajout" 
+              (matiereUpdated)="matiereUpdated($event)">
+          </app-update-matiere>
+      </div>
+  </div>
+
+  <!-- Matiere List Card -->
+  <div class="card shadow-sm rounded-lg">
+      <div class="card-header bg-gradient custom-card-header">
+          <h3 class="mb-0 text-white">
+              <i class="fas fa-list me-2"></i>
+              Liste des Matières
+          </h3>
+      </div>
+      <div class="card-body p-4">
+          <div class="table-responsive">
+              <table class="custom-table">
+                  <thead>
+                      <tr>
+                          <th>Id</th>
+                          <th>Code</th>
+                          <th>Nom</th>
+                          <th>Description</th>
+                          <th>Enseignant</th>
+                          <th>Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let matiere of matieres">
+                          <td>{{matiere.id}}</td>
+                          <td>
+                              <span class="badge bg-primary">{{matiere.code}}</span>
+                          </td>
+                          <td>
+                              <strong>{{matiere.name}}</strong>
+                          </td>
+                          <td>{{matiere.description}}</td>
+                          <td>
+                              <i class="fas fa-user-tie me-2 text-primary"></i>
+                              {{matiere.teacherName}}
+                          </td>
+                          <td>
+                              <div class="action-buttons">
+                                <button class="btn btn-sm btn-primary custom-btn-edit me-1" 
+                                        (click)="updateMatiere(matiere)">
+                                    <i class="fas fa-edit me-1"></i>
+                                    Editer
+                                </button>
+                        
+                                  <button class="btn btn-sm btn-danger custom-btn-delete" 
+                                          (click)="supprimerMatiere(matiere)">
+                                      <i class="fas fa-trash-alt me-1"></i>
+                                      Supprimer
+                                  </button>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>

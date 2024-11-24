@@ -1,0 +1,23 @@
+<form (ngSubmit)="saveMatiere()">
+  <div class="form-group" *ngIf="!ajout">
+    <label>ID Matière</label>
+    <input type="text" [(ngModel)]="matiere.id" name="id" class="form-control" readonly>
+  </div>
+  <div class="form-group">
+    <label>Code</label>
+    <input type="text" [(ngModel)]="matiere.code" name="code" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label>Nom Matière</label>
+    <input type="text" [(ngModel)]="matiere.name" name="name" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <textarea [(ngModel)]="matiere.description" name="description" class="form-control" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Nom de l'enseignant</label>
+    <input type="text" [(ngModel)]="matiere.teacherName" name="teacherName" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-success">{{ ajout ? 'Ajouter' : 'Modifier' }}</button>
+</form>

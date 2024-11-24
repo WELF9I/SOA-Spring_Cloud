@@ -1,0 +1,127 @@
+<div class="container py-4">
+    <div class="card shadow-sm rounded-lg">
+        <div class="card-header bg-gradient custom-card-header">
+            <h2 class="mb-0 text-white">
+                <i class="fas fa-plus-circle me-2"></i>
+                Ajouter un Cours
+            </h2>
+        </div>
+        <div class="card-body p-4">
+            <form>
+                <div class="row g-4">
+                    <!-- Course Title -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">
+                                <i class="fas fa-book me-2 text-primary"></i>
+                                Titre du Cours
+                            </label>
+                            <input type="text" 
+                                   [(ngModel)]="newCours.title" 
+                                   name="titreCours" 
+                                   class="form-control custom-input"
+                                   placeholder="Entrez le titre du cours">
+                        </div>
+                    </div>
+  
+                    <!-- Duration -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">
+                                <i class="fas fa-clock me-2 text-primary"></i>
+                                Durée (en heures)
+                            </label>
+                            <input type="number" 
+                                   [(ngModel)]="newCours.duration" 
+                                   name="dureeCours" 
+                                   class="form-control custom-input"
+                                   placeholder="Durée du cours">
+                        </div>
+                    </div>
+  
+                    <!-- Content -->
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="form-label">
+                                <i class="fas fa-file-alt me-2 text-primary"></i>
+                                Contenu du Cours
+                            </label>
+                            <textarea [(ngModel)]="newCours.content" 
+                                    name="contenuCours" 
+                                    class="form-control custom-textarea" 
+                                    rows="4"
+                                    placeholder="Décrivez le contenu du cours"></textarea>
+                        </div>
+                    </div>
+  
+                    <!-- Video URL -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">
+                                <i class="fas fa-video me-2 text-primary"></i>
+                                URL de la vidéo
+                            </label>
+                            <input type="text" 
+                                   [(ngModel)]="newCours.videoUrl" 
+                                   name="videoUrl" 
+                                   class="form-control custom-input"
+                                   placeholder="Lien de la vidéo">
+                        </div>
+                    </div>
+  
+                    <!-- Subject Selection -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">
+                                <i class="fas fa-graduation-cap me-2 text-primary"></i>
+                                Matière
+                            </label>
+                            <div class="select-wrapper">
+                                <select class="form-select custom-select-modern" 
+                                        id="idMatiere" 
+                                        name="idMatiere" 
+                                        [(ngModel)]="newIdMatiere">
+                                    <option value="" disabled selected>Sélectionner une matière</option>
+                                    <option *ngFor="let matiere of matieres" [value]="matiere.id">
+                                        {{matiere.name}}
+                                    </option>
+                                </select>
+                                <i class="fas fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+  
+                    <!-- Image Upload -->
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="form-label">
+                                <i class="fas fa-image me-2 text-primary"></i>
+                                Image
+                            </label>
+                            <input type="file" 
+                                   (change)="onImageUpload($event)" 
+                                   class="form-control custom-input">
+                        </div>
+                    </div>
+  
+                    <!-- Image Preview -->
+                    <div class="col-12">
+                        <img [src]="imagePath" 
+                             class="card-img-top img-fluid rounded-start" 
+                             style="width: 500px; height: 300px" />
+                    </div>
+                </div>
+  
+                <!-- Submit Button -->
+                <div class="mt-4 text-end">
+                    <button type="submit" 
+                            (click)="addCours()" 
+                            class="btn btn-primary custom-button">
+                        <i class="fas fa-plus-circle me-2"></i>
+                        Ajouter le Cours
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,438 @@
+.table-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border: 1px solid #eef2f7; /* Added container border */
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #eef2f7; /* Added table border */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the border-radius works with the table */
+}
+
+.custom-table thead th {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Added vertical borders for header */
+    border-bottom: 1px solid #eef2f7;
+}
+
+.custom-table thead th:last-child {
+    border-right: none;
+}
+
+.custom-table tbody tr {
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.custom-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.custom-table tbody tr:hover {
+    background-color: rgba(30, 60, 114, 0.05);
+    transform: translateY(-1px);
+}
+
+.custom-table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-right: 1px solid #eef2f7; /* Added vertical borders for cells */
+    border-bottom: 1px solid #eef2f7;
+}
+
+.custom-table td:last-child {
+    border-right: none;
+}
+
+/* Add these new styles for better header appearance */
+.custom-table thead {
+    border-bottom: 2px solid #2a5298;
+}
+
+/* Optional: Add zebra striping for better row distinction */
+.custom-table tbody tr:nth-child(even) {
+    background-color: rgba(30, 60, 114, 0.02);
+}
+
+/* Ensure the first and last cells maintain rounded corners */
+.custom-table thead th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.custom-table thead th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.custom-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+.custom-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+/* Modern Select Styles */
+.form-label {
+    color: #344767;
+    font-size: 0.95rem;
+}
+
+.form-label i {
+    font-size: 1.1rem;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.custom-select-modern {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    background-color: #fff;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    color: #344767;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.custom-select-modern:focus {
+    border-color: #1e3c72;
+    box-shadow: 0 0 0 0.25rem rgba(30, 60, 114, 0.15);
+    outline: none;
+}
+
+.custom-select-modern:hover {
+    border-color: #1e3c72;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.select-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1e3c72;
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+.custom-select-modern:focus + .select-arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Style for the placeholder option */
+.custom-select-modern option[value=""][disabled] {
+    color: #6c757d;
+}
+
+/* Style for actual options */
+.custom-select-modern option {
+    color: #344767;
+    padding: 1rem;
+}
+
+/* Custom Search Container Update */
+.custom-search {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-select-modern {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    .form-label {
+        font-size: 0.9rem;
+    }
+}
+
+/* Custom Card Styles */
+.custom-card-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 1.5rem;
+    border-bottom: none;
+}
+
+/* Custom Input Styles */
+.custom-input, .custom-textarea {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-input:focus, .custom-textarea:focus {
+    border-color: #1e3c72;
+    box-shadow: 0 0 0 0.25rem rgba(30, 60, 114, 0.15);
+}
+
+/* Custom Button Styles */
+.custom-button {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.custom-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.custom-btn-edit {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.custom-btn-delete {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+/* Badge Styles */
+.badge {
+    padding: 0.5em 1em;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+/* Form Group Spacing */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Card Shadow */
+.card {
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    border: none;
+    border-radius: 15px;
+}
+
+.action-buttons{
+    justify-content: space-between;
+}
+
+/* Modern Form Container */
+.form-container {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.form-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-header h2 {
+    color: #1e3c72;
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 250px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #344767;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-control-modern {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    color: #344767;
+    background-color: #fff;
+}
+
+.form-control-modern:focus {
+    border-color: #1e3c72;
+    box-shadow: 0 0 0 0.25rem rgba(30, 60, 114, 0.15);
+    outline: none;
+}
+
+textarea.form-control-modern {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Read-only input styling */
+.form-control-modern[readonly] {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+/* Select styling */
+.select-modern {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%231e3c72' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) center;
+    background-color: #fff;
+}
+
+/* Button Styles */
+.btn-modern {
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    border: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-modern-primary {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+}
+
+.btn-modern-success {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+}
+
+.btn-modern-danger {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    color: white;
+}
+
+.btn-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 1.5rem;
+    }
+    
+    .form-group {
+        min-width: 100%;
+    }
+}
+
+/* Action buttons container */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+}
+
+/* Compact modern button base styles */
+.btn-modern {
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    min-width: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Delete button */
+.btn-modern-delete {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+}
+
+.btn-modern-delete:hover {
+    background: linear-gradient(135deg, #c82333 0%, #dc3545 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(220, 53, 69, 0.2);
+}
+
+/* Edit button */
+.btn-modern-edit {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+}
+
+.btn-modern-edit:hover {
+    background: linear-gradient(135deg, #218838 0%, #28a745 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);
+}
+
+/* Icon styles */
+.btn-modern i {
+    font-size: 0.8rem;
+}
+
+/* Optional: Add active state */
+.btn-modern:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}

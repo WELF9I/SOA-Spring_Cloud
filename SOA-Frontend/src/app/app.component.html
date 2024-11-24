@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-gradient">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <i class="fas fa-book-reader mr-2"></i>
+      Gestion Cours
+    </a>
+
+    <!-- Responsive Toggle Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" routerLink="courses" routerLinkActive="active">
+            <i class="fas fa-home mr-1"></i>
+            Home
+          </a>
+        </li>
+
+        <!-- Cours Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="coursDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-graduation-cap mr-1"></i>
+            Cours
+          </a>
+          <div class="dropdown-menu animated fadeIn" aria-labelledby="coursDropdown">
+            <a *ngIf="authService.isAdmin()" class="dropdown-item" routerLink="add-cours">
+              <i class="fas fa-plus-circle mr-2"></i>Ajouter
+            </a>
+            <a class="dropdown-item" routerLink="courses">
+              <i class="fas fa-list mr-2"></i>Lister
+            </a>
+            <a class="dropdown-item" routerLink="/rechercheParMatiere">
+              <i class="fas fa-search mr-2"></i>Recherche Par Matière
+            </a>
+            <a class="dropdown-item" routerLink="/rechercheParTitle">
+              <i class="fas fa-search mr-2"></i>Recherche Par Title
+            </a>
+            <div *ngIf="authService.isAdmin()" class="dropdown-divider"></div>
+            <a *ngIf="authService.isAdmin()" class="dropdown-item" routerLink="/listeMatieres">
+              <i class="fas fa-cog mr-2"></i>Gestion des matières
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Right-aligned nav items -->
+      <ul class="navbar-nav ml-auto">
+        <!-- User Info -->
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center">
+            <i class="fas fa-user mr-1"></i>
+            {{authService.loggedUser}}
+          </a>
+        </li>
+
+        <!-- User Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle mr-1"></i>
+            Connexion
+          </a>
+          <div class="dropdown-menu dropdown-menu-right animated fadeIn" aria-labelledby="userDropdown">
+            <a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink="login">
+              <i class="fas fa-sign-in-alt mr-2"></i>Login
+            </a>
+            <a *ngIf="authService.isloggedIn" class="dropdown-item" (click)="onLogout()">
+              <i class="fas fa-sign-out-alt mr-2"></i>Logout
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <i class="fas fa-user-cog mr-2"></i>Profile
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
